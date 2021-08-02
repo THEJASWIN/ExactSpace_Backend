@@ -23,6 +23,16 @@ app.get('/test', (req, res) => {
     res.status(200).send("Testing successful...")
 })
 
+
+app.get('/test/indexvaldata', async (req, res) => {
+    try {
+        const data = await Data.find()
+        res.status(200).json(data)
+    } catch (error) {
+        res.status(404).json({ error: error.message })
+    }
+})
+
 app.post('/test/indexvaldata', async (req, res) => {
     let d = new Date()
     let name = req.body.name
