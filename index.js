@@ -23,7 +23,7 @@ app.get('/test', (req, res) => {
     res.status(200).send("Testing successful...")
 })
 
-app.get('/test/indexvaldata', async (req, res) => {
+app.post('/test/indexvaldata', async (req, res) => {
     let d = new Date()
     let name = req.body.name
     console.log("Previos before updation :", prevArray)
